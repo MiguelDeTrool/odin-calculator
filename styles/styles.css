@@ -1,0 +1,48 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator {
+    border: thin solid black;
+    text-align: center;
+    width: 250px;
+    height: 420px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen {
+    font-size: 150%;
+    text-align: right;
+    border: thin solid black;
+    width: 240px;
+    height: 80px;
+    line-height: 80px;
+    margin: 20px auto;
+}
+
+.button-space {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+button {
+    font-size: 30px;
+    width: 60px;
+    height: auto;
+    margin: 1px;
+    flex: auto;
+}
+
+button.top {
+    width: 110px;
+}
+
+.bruh {
+    background-color: red;
+}
