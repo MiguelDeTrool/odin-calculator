@@ -1,6 +1,5 @@
 let screen = document.querySelector(".screen");
 let lastButtonOp = false;
-
 let lastNumber = "";
 let lastOperator = "";
 let currentNumber = "";
@@ -21,7 +20,7 @@ function handleNumber(number) {
 }
 
 numberButtons.forEach(function(button) {
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function() {
         handleNumber(button.textContent);
     });
 });
@@ -55,12 +54,12 @@ function evaluate() {
     if (lastButtonOp == true) {
         return;
     }
-    if (lastOperator == '/' && Number(screen.textContent) == 0) {
+    if (lastOperator == "/" && Number(screen.textContent) == 0) {
         clearScreenAndMemory();
         screen.textContent = "Can't divide by 0";
         return;
     }
-    if (lastOperator != '') {
+    if (lastOperator != "") {
         currentNumber = Number(screen.textContent);
         let result = operate(lastNumber, currentNumber, lastOperator);
         result = roundAccurately(result, 5);

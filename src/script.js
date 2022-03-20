@@ -11,3 +11,4 @@ function include(file) {
 
 include("src/operatorDeclarations.js");
 include("src/operate.js");
+include("src/keyboard.js");
