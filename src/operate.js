@@ -4,6 +4,21 @@ let lastNumber = "";
 let lastOperator = "";
 let currentNumber = "";
 
+function backspace() {
+    screen.textContent = screen.textContent.slice(0, -1);
+}
+
+function clearScreenAndMemory() {
+    screen.textContent = "";
+    lastNumber = "";
+    lastOperator = "";
+    currentNumber = "";
+}
+
+document.querySelector(".backspace").addEventListener("click", backspace);
+
+document.querySelector(".AC").addEventListener("click", clearScreenAndMemory);
+
 const numberButtons = document.querySelectorAll("button.number");
 
 function handleNumber(number) {
@@ -25,22 +40,7 @@ numberButtons.forEach(function(button) {
     });
 });
 
-function backspace() {
-    screen.textContent = screen.textContent.slice(0, -1);
-}
-
-function clearScreenAndMemory() {
-    screen.textContent = "";
-    lastNumber = "";
-    lastOperator = "";
-    currentNumber = "";
-}
-
-document.querySelector(".backspace").addEventListener("click", backspace);
-
-document.querySelector(".AC").addEventListener("click", clearScreenAndMemory);
-
-function operate(a, b, operator) {
+function operate(a, b, operator) { //Would rather have this in operatorDeclarations.js
     a = Number(a);
     b = Number(b);
     if (operator === '+') return sum(a, b);
@@ -48,7 +48,6 @@ function operate(a, b, operator) {
     if (operator === '*') return multiply(a, b);
     if (operator === '/') return divide(a, b);
 }
-
 
 function evaluate() {
     if (lastButtonOp == true) {
@@ -81,14 +80,12 @@ operatorButtons.forEach(function(button) {
     });
 });
 
-
 const evaluateButton = document.querySelector(".evaluate");
 
 evaluateButton.addEventListener("click", function () {
     evaluate();
     lastOperator = "";
 });
-
 
 function roundAccurately(num, places) {
     return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
